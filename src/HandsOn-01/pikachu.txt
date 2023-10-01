@@ -1,0 +1,4 @@
+Pokemon: pikachu 
+Pokemon ID: 25 
+Pokemon Height: 0.400000 
+Pokemon Weight: 6.000000 
