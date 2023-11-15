@@ -1,0 +1,26 @@
+CC=gcc
+CFLAGS=-c -Wall -O3 -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wconversion
+ASH=ash.c 
+POKEDEX=pokedex.c 
+OBJECTS_ASH=$(ASH:.c=.o)
+OBJECTS_POKEDEX=$(POKEDEX:.c=.o)
+ASH_EXECUTABLE=ash
+POKEDEX_EXECUTABLE=pokedex
+
+all: $(ASH) $(POKEDEX) $(ASH_EXECUTABLE) $(POKEDEX_EXECUTABLE)
+	
+$(ASH_EXECUTABLE): $(OBJECTS_ASH)
+	$(CC) $(OBJECTS_ASH) -o $@
+
+$(POKEDEX_EXECUTABLE): $(OBJECTS_POKEDEX)
+	$(CC) $(OBJECTS_POKEDEX) -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+execute: $(ASH_EXECUTABLE)
+	 ./$(ASH_EXECUTABLE)
+
+clean:
+	/bin/rm -rf *.o
+	/bin/rm -rf $(ASH_EXECUTABLE) $(POKEDEX_EXECUTABLE)

@@ -1,0 +1,1 @@
+./escriptor_cua_misstages & ./lector_cua_misstages
