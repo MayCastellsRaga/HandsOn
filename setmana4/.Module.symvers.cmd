@@ -1,0 +1,1 @@
+cmd_/home/may/HandsOn/setmana4/Module.symvers :=  sed 's/ko$$/o/'  /home/may/HandsOn/setmana4/modules.order | scripts/mod/modpost -m     -o /home/may/HandsOn/setmana4/Module.symvers -e -i Module.symvers -T - 
